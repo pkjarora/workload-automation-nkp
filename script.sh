@@ -157,20 +157,6 @@ echo "VirtualGroup creation completed successfully."
 
 kubectl get virtualgroups.kommander.mesosphere.io
 
-############################################
-# 7 Fetch Workspace UUID
-############################################
-echo "Fetching Workspace UUID..."
-
-WS_UID=$(kubectl get workspace "$NAMESPACE" \
-  -o jsonpath='{.spec.clusterLabels.workspaces\.kommander\.mesosphere\.io/workspace-ref}')
-
-if [[ -z "$WS_UID" ]]; then
-  echo "ERROR: Could not fetch Workspace UUID"
-  exit 1
-fi
-
-echo "Workspace UUID: $WS_UID"
 
 ############################################
 # 8 Create WorkspaceRole
