@@ -1,0 +1,18 @@
+apiVersion: workspaces.kommander.mesosphere.io/v1alpha1
+kind: WorkspaceRole
+metadata:
+  annotations:
+    kommander.mesosphere.io/description: ""
+    kommander.mesosphere.io/display-name: custom-role-$USER_NAME
+  finalizers:
+    - workspaces.kommander.mesosphere.io/workspacerole
+  name: custom-role-$USER_NAME
+  namespace: $NAMESPACE
+spec:
+  rules:
+    - apiGroups:
+        - "*"
+      resources:
+        - "*"
+      verbs:
+        - "*"

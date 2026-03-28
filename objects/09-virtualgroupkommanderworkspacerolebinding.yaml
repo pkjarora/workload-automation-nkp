@@ -1,0 +1,13 @@
+apiVersion: workspaces.kommander.mesosphere.io/v1alpha1
+kind: VirtualGroupKommanderWorkspaceRoleBinding
+metadata:
+  finalizers:
+    - workspaces.kommander.mesosphere.io/virtualgroupkommanderworkspacerolebinding
+    - workspaces.kommander.mesosphere.io/virtualgroupkommanderworkspacerolebindingsyncproject
+  name: workspacepolicy-$USER_NAME
+  namespace: $NAMESPACE
+spec:
+  kommanderWorkspaceRoleRef:
+    name: kommander-workspace-admin
+  virtualGroupRef:
+    name: ${USER_NAME}-user

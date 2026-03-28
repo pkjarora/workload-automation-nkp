@@ -1,0 +1,11 @@
+apiVersion: kommander.mesosphere.io/v1beta1
+kind: VirtualGroup
+metadata:
+  annotations:
+    kommander.mesosphere.io/display-name: ${USER_NAME}
+  name: ${USER_NAME}-user
+spec:
+  subjects:
+    - apiGroup: rbac.authorization.k8s.io
+      kind: User
+      name: ${USER_EMAIL}

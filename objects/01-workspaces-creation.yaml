@@ -1,0 +1,13 @@
+apiVersion: workspaces.kommander.mesosphere.io/v1alpha1
+kind: Workspace
+metadata:
+  annotations:
+    workspace.kommander.mesosphere.io/default-app-deployments-created: "true"
+    kommander.mesosphere.io/display-name: $NAMESPACE
+  finalizers:
+    - kommander.mesosphere.io/workspacekustomization
+    - workspaces.kommander.mesosphere.io/workspace
+  generation: 2
+  name: $NAMESPACE
+spec:
+  namespaceName: $NAMESPACE

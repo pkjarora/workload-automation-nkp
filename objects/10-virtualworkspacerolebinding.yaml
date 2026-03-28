@@ -1,0 +1,16 @@
+apiVersion: workspaces.kommander.mesosphere.io/v1alpha1
+kind: VirtualGroupWorkspaceRoleBinding
+metadata:
+  finalizers:
+    - workspaces.kommander.mesosphere.io/virtualgroupworkspacerolebinding
+  generateName: workspacepolicy-
+  generation: 1
+  name: workspacepolicy-$USER_NAME
+  namespace: $NAMESPACE
+spec:
+  placement:
+    clusterSelector: {}
+  virtualGroupRef:
+    name: $USER_NAME-user
+  workspaceRoleRef:
+    name: custom-role-$USER_NAME
