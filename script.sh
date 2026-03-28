@@ -21,7 +21,7 @@ echo "===== NKP Automation Started at $(date) ====="
 ############################################
 echo "Creating Workspace ${NAMESPACE} for cluster: ${CLUSTER_NAME}"
 
-if ! envsubst < https://raw.githubusercontent.com/pkjarora/workload-automation-nkp/301358ea2ef6b93ac52eb3d01eb911b825a09e1d/objects/01-workspaces-creation.yaml | kubectl apply -f -; then
+if ! envsubst < ./objects/01-workspaces-creation.yaml | kubectl apply -f -; then
   echo "ERROR: Workspace creation failed"
   exit 1
 fi
@@ -148,7 +148,7 @@ done
 ############################################
 echo "Creating Virtual Group ${USER} for cluster: ${CLUSTER_NAME}"
 
-if ! envsubst < https://raw.githubusercontent.com/pkjarora/workload-automation-nkp/301358ea2ef6b93ac52eb3d01eb911b825a09e1d/objects/06-virtualgroup-creation.yaml | kubectl apply -f -; then
+if ! envsubst < ./objects/06-virtualgroup-creation.yaml | kubectl apply -f -; then
   echo "ERROR: VirtualGroup creation failed"
   exit 1
 fi
@@ -177,7 +177,7 @@ echo "Workspace UUID: $WS_UID"
 ############################################
 echo "Creating WorkspaceRole for ${NAMESPACE}"
 
-if ! envsubst < https://raw.githubusercontent.com/pkjarora/workload-automation-nkp/301358ea2ef6b93ac52eb3d01eb911b825a09e1d/objects/08-workspaceroles-creation.yaml | kubectl apply -f -; then
+if ! envsubst < ./objects/08-workspaceroles-creation.yaml | kubectl apply -f -; then
   echo "ERROR: WorkspaceRole creation failed"
   exit 1
 fi
@@ -189,7 +189,7 @@ echo "WorkspaceRole creation completed successfully."
 ############################################
 echo "Creating VirtualGroupKommanderWorkspaceRoleBinding for ${NAMESPACE}"
 
-if ! envsubst < https://raw.githubusercontent.com/pkjarora/workload-automation-nkp/301358ea2ef6b93ac52eb3d01eb911b825a09e1d/objects/09-virtualgroupkommanderworkspacerolebinding.yaml | kubectl apply -f -; then
+if ! envsubst < ./objects/09-virtualgroupkommanderworkspacerolebinding.yaml | kubectl apply -f -; then
   echo "ERROR: VirtualGroupKommanderWorkspaceRoleBinding creation failed"
   exit 1
 fi
@@ -201,7 +201,7 @@ echo "VirtualGroupKommanderWorkspaceRoleBinding creation completed successfully.
 ############################################    
 echo "Creating VirtualGroupWorkspaceRoleBinding for ${NAMESPACE}"
 
-if ! envsubst < https://raw.githubusercontent.com/pkjarora/workload-automation-nkp/301358ea2ef6b93ac52eb3d01eb911b825a09e1d/objects/10-virtualworkspacerolebinding.yaml | kubectl apply -f -; then
+if ! envsubst < ./objects/10-virtualworkspacerolebinding.yaml | kubectl apply -f -; then
   echo "ERROR: VirtualGroupWorkspaceRoleBinding creation failed"
   exit 1
 fi

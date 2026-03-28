@@ -1,0 +1,5 @@
+===== NKP Automation Started at Sat Mar 28 21:50:21 IST 2026 =====
+Creating Workspace ws-28mar2026-v2 for cluster: nkpcl-28mar2026-214929
+./script.sh: line 24: https://raw.githubusercontent.com/pkjarora/workload-automation-nkp/301358ea2ef6b93ac52eb3d01eb911b825a09e1d/objects/01-workspaces-creation.yaml: No such file or directory
+error: no objects passed to apply
+ERROR: Workspace creation failed
